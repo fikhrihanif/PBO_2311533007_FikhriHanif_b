@@ -59,7 +59,7 @@ public class LoginFrame extends JFrame {
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Anak kuliah kok nyuci, kasi ke kami aja");
-		lblNewLabel_1.setBounds(121, 61, 197, 14);
+		lblNewLabel_1.setBounds(121, 61, 272, 14);
 		contentPane.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("Username");

@@ -8,6 +8,8 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class MainFrame extends JFrame {
 
@@ -17,18 +19,24 @@ public class MainFrame extends JFrame {
 	/**
 	 * Launch the application.
 	 */
+	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
 					MainFrame frame = new MainFrame();
 					frame.setVisible(true);
+					
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
+				UserFrame frame = new UserFrame();
+				frame.setVisible(true);
+				frame.loadTable();
 			}
 		});
 	}
+
 
 	/**
 	 * Create the frame.
@@ -60,6 +68,12 @@ public class MainFrame extends JFrame {
 		contentPane.add(btnPelanggan);
 		
 		JButton btnPengguna = new JButton("PENGGUNA");
+		btnPengguna.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new UserFrame().setVisible(true);
+				dispose();
+			}
+		});
 		btnPengguna.setBounds(56, 124, 112, 49);
 		contentPane.add(btnPengguna);
 		
