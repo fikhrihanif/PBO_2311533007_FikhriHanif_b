@@ -20,6 +20,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.Font;
 
 public class UserFrame extends JFrame {
 
@@ -74,7 +75,7 @@ public class UserFrame extends JFrame {
 	 */
 	public UserFrame() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 430);
+		setBounds(100, 100, 450, 514);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -82,15 +83,18 @@ public class UserFrame extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Name");
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		lblNewLabel.setBounds(39, 34, 46, 14);
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblUsername = new JLabel("Username");
-		lblUsername.setBounds(39, 62, 76, 14);
+		lblUsername.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		lblUsername.setBounds(39, 90, 76, 14);
 		contentPane.add(lblUsername);
 		
 		JLabel lblPassword = new JLabel("Password");
-		lblPassword.setBounds(39, 90, 76, 14);
+		lblPassword.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		lblPassword.setBounds(39, 149, 76, 14);
 		contentPane.add(lblPassword);
 		
 		txtName = new JTextField();
@@ -100,15 +104,16 @@ public class UserFrame extends JFrame {
 		
 		txtUsername = new JTextField();
 		txtUsername.setColumns(10);
-		txtUsername.setBounds(120, 59, 295, 20);
+		txtUsername.setBounds(120, 89, 295, 20);
 		contentPane.add(txtUsername);
 		
 		txtPassword = new JTextField();
 		txtPassword.setColumns(10);
-		txtPassword.setBounds(120, 87, 295, 20);
+		txtPassword.setBounds(125, 148, 295, 20);
 		contentPane.add(txtPassword);
 		
 		JButton btnUpdate = new JButton("Update");
+		btnUpdate.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		btnUpdate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				User user = new User();
@@ -121,10 +126,11 @@ public class UserFrame extends JFrame {
 				loadTable();
 			}
 		});
-		btnUpdate.setBounds(167, 141, 76, 23);
+		btnUpdate.setBounds(120, 187, 88, 23);
 		contentPane.add(btnUpdate);
 		
 		JButton btnSave = new JButton("Save");
+		btnSave.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		btnSave.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				User user = new User();
@@ -136,10 +142,11 @@ public class UserFrame extends JFrame {
 				loadTable();
 			}
 		});
-		btnSave.setBounds(81, 141, 76, 23);
+		btnSave.setBounds(39, 187, 76, 23);
 		contentPane.add(btnSave);
 		
 		JButton btnDelete = new JButton("Delete");
+		btnDelete.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		btnDelete.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(id != null) {
@@ -151,11 +158,18 @@ public class UserFrame extends JFrame {
 				}
 			}
 		});
-		btnDelete.setBounds(253, 141, 76, 23);
+		btnDelete.setBounds(218, 187, 88, 23);
 		contentPane.add(btnDelete);
 		
 		JButton btnCancel = new JButton("Cancel");
-		btnCancel.setBounds(339, 141, 76, 23);
+		btnCancel.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		btnCancel.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				reset();
+				loadTable();
+			}
+		});
+		btnCancel.setBounds(316, 187, 86, 23);
 		contentPane.add(btnCancel);
 		
 		tableUsers = new JTable();
@@ -168,7 +182,7 @@ public class UserFrame extends JFrame {
 				txtPassword.setText(tableUsers.getValueAt(tableUsers.getSelectedRow(), 3).toString());
 			}
 		});
-		tableUsers.setBounds(39, 175, 376, 205);
+		tableUsers.setBounds(39, 246, 376, 205);
 		contentPane.add(tableUsers);
 	}
 }

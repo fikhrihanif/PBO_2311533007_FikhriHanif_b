@@ -60,10 +60,22 @@ public class MainFrame extends JFrame {
 		contentPane.add(btnNewButton);
 		
 		JButton btnLayanan = new JButton("LAYANAN");
+		btnLayanan.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new ServiceFrame().setVisible(true);
+				dispose();
+			}
+		});
 		btnLayanan.setBounds(178, 64, 112, 49);
 		contentPane.add(btnLayanan);
 		
 		JButton btnPelanggan = new JButton("PELANGGAN");
+		btnPelanggan.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new CostumerFrame().setVisible(true);
+				dispose();
+			}
+		});
 		btnPelanggan.setBounds(300, 64, 112, 49);
 		contentPane.add(btnPelanggan);
 		

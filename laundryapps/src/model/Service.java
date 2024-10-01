@@ -1,7 +1,6 @@
 package model;
 
 public class Service {
-	
 	String id, jenis, status;
 	int harga;
 	public String getId() {
@@ -28,7 +27,6 @@ public class Service {
 	public void setHarga(int harga) {
 		this.harga = harga;
 	}
-	
-	
 
+	
 }
