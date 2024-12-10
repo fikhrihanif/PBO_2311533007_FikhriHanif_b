@@ -18,8 +18,8 @@ public class UserRepo implements UserDAO{
 	private Connection connection;
 	final String insert = "INSERT INTO user (name, username, password) VALUES (?,?,?);";
 	final String select = "SELECT * FROM user;";
-	final String delete = "DELETE FROM user WHERE id=?;";
-	final String update = "UPDATE user SET name=?, username=?, password=? WHERE id=?;";
+	final String delete = "DELETE FROM user WHERE id_service=?;";
+	final String update = "UPDATE user SET name=?, username=?, password=? WHERE id_service=?;";
 	
 	public UserRepo() {
 		connection = Database.koneksi();
@@ -58,7 +58,7 @@ public class UserRepo implements UserDAO{
 			ResultSet rs = st.executeQuery(select);
 			while(rs.next()) {
 				User user = new User();
-				user.setId(rs.getString("id"));
+				user.setId(rs.getString("id_service"));
 				user.setNama(rs.getString("name"));
 				user.setUsername(rs.getString("username"));
 				user.setPassword(rs.getString("password"));

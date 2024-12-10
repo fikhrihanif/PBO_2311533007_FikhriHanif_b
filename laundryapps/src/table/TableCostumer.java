@@ -32,13 +32,13 @@ public class TableCostumer extends AbstractTableModel {
 	public Object getValueAt(int rowIndex, int columnIndex) {
 		switch (columnIndex) {
 		case 0:
-			return ls.get(rowIndex).getId();
+			return ls.get(rowIndex).getId_costumer();
 		case 1:
-			return ls.get(rowIndex).getNama();
+			return ls.get(rowIndex).getNama_costumer();
 		case 2:
-			return ls.get(rowIndex).getAlamat();
+			return ls.get(rowIndex).getAlamat_costumer();
 		case 3:
-			return ls.get(rowIndex).getNohp();
+			return ls.get(rowIndex).getNohp_costumer();
 		default:
 			return null;
 		}

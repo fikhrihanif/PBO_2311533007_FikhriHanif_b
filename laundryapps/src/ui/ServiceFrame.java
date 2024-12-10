@@ -116,9 +116,9 @@ public class ServiceFrame extends JFrame {
 		btnSave.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Service service = new Service();
-				service.setJenis(txtJenis.getText());
-				service.setStatus(txtStatus.getText());
-				service.setHarga(Integer.parseInt(txtHarga.getText()));
+				service.setJenis_service(txtJenis.getText());
+				service.setStatus_service(txtStatus.getText());
+				service.setHarga_service(Integer.parseInt(txtHarga.getText()));
 				srv.save(service);
 				reset();
 				loadTable();
@@ -133,10 +133,10 @@ public class ServiceFrame extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				if(id != null) {
 					Service service = new Service();
-					service.setJenis(txtJenis.getText());
-					service.setStatus(txtStatus.getText());
-					service.setHarga(Integer.parseInt(txtHarga.getText()));
-					service.setId(id);
+					service.setJenis_service(txtJenis.getText());
+					service.setStatus_service(txtStatus.getText());
+					service.setHarga_service(Integer.parseInt(txtHarga.getText()));
+					service.setId_service(id);
 					srv.update(service);
 					reset();
 					loadTable();

@@ -30,13 +30,13 @@ public class TableService extends AbstractTableModel{
 		// TODO Auto-generated method stub
 		switch (columnIndex) {
 		case 0:
-			return ls.get(rowIndex).getId();
+			return ls.get(rowIndex).getId_service();
 		case 1:
-			return ls.get(rowIndex).getJenis();
+			return ls.get(rowIndex).getJenis_service();
 		case 2:
-			return ls.get(rowIndex).getStatus();
+			return ls.get(rowIndex).getStatus_service();
 		case 3:
-			return ls.get(rowIndex).getHarga();
+			return ls.get(rowIndex).getHarga_service();
 		default:
 			return null;
 		}

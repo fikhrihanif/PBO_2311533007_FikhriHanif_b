@@ -16,10 +16,10 @@ import model.Service;
 
 public class ServiceRepo implements ServiceDAO{
 	private Connection connection;
-	final String insert = "INSERT INTO service (jenis, status, harga) VALUES (?,?,?);";
+	final String insert = "INSERT INTO service (jenis_service, status_service, harga_service) VALUES (?,?,?);";
 	final String select = "SELECT * FROM service;" ;
-	final String delete = "DELETE FROM service WHERE id = ?;";
-	final String update = "UPDATE service SET jenis = ?, status = ?, harga = ? WHERE id = ?;";
+	final String delete = "DELETE FROM service WHERE id_service = ?;";
+	final String update = "UPDATE service SET jenis_service = ?, status_service = ?, harga_service = ? WHERE id_service = ?;";
 	
 	public ServiceRepo() {
 		connection = Database.koneksi();
@@ -31,9 +31,9 @@ public class ServiceRepo implements ServiceDAO{
 		PreparedStatement st = null;
 		try {
 			st = connection.prepareStatement(insert);
-			st.setString(1, service.getJenis());
-			st.setString(2, service.getStatus());
-			st.setInt(3, service.getHarga());
+			st.setString(1, service.getJenis_service());
+			st.setString(2, service.getStatus_service());
+			st.setInt(3, service.getHarga_service());
 			st.executeUpdate();
 			
 		}catch(SQLException e) {
@@ -58,10 +58,10 @@ public class ServiceRepo implements ServiceDAO{
 			ResultSet rs = st.executeQuery(select);
 			while(rs.next()) {
 				Service service = new Service();
-				service.setId(rs.getString("id"));
-				service.setJenis(rs.getString("jenis"));
-				service.setStatus(rs.getString("status"));
-				service.setHarga(rs.getInt("harga"));
+				service.setId_service(rs.getString("id_service"));
+				service.setJenis_service(rs.getString("jenis_service"));
+				service.setStatus_service(rs.getString("status_service"));
+				service.setHarga_service(rs.getInt("harga_service"));
 				ls.add(service);
 			}
 		}catch(SQLException e) {
@@ -95,10 +95,10 @@ public class ServiceRepo implements ServiceDAO{
 		PreparedStatement st = null;
 		try {
 			st = connection.prepareStatement(update);
-			st.setString(1, service.getJenis());
-			st.setString(2, service.getStatus());
-			st.setInt(3, service.getHarga());
-			st.setString(4, service.getId());
+			st.setString(1, service.getJenis_service());
+			st.setString(2, service.getStatus_service());
+			st.setInt(3, service.getHarga_service());
+			st.setString(4, service.getId_service());
 			st.executeUpdate();
 		}catch(SQLException e) {
 			e.printStackTrace();

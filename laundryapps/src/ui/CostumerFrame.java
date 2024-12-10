@@ -113,9 +113,9 @@ public class CostumerFrame extends JFrame {
 		btnSave.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Costumer costumer = new Costumer();
-				costumer.setNama(txtNama.getText());
-				costumer.setAlamat(txtAlamat.getText());
-				costumer.setNohp(txtNohp.getText());
+				costumer.setNama_costumer(txtNama.getText());
+				costumer.setAlamat_costumer(txtAlamat.getText());
+				costumer.setNohp_costumer(txtNohp.getText());
 				cst.save(costumer);
 				reset();
 				loadTable();
@@ -130,10 +130,10 @@ public class CostumerFrame extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				if(id != null) {
 					Costumer costumer = new Costumer();
-					costumer.setNama(txtNama.getText());
-					costumer.setAlamat(txtAlamat.getText());
-					costumer.setNohp(txtNohp.getText());
-					costumer.setId(id);
+					costumer.setNama_costumer(txtNama.getText());
+					costumer.setAlamat_costumer(txtAlamat.getText());
+					costumer.setNohp_costumer(txtNohp.getText());
+					costumer.setId_costumer(id);
 					cst.update(costumer);
 					reset();
 					loadTable();

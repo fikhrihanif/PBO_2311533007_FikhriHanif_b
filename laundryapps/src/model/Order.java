@@ -2,55 +2,43 @@ package model;
 
 public class Order {
 	
-	String id, id_costumer, id_service, id_user, tanggal, tanggal_selesai, status, status_pembayaran;
+	String id_order, tanggal_datang_order, tanggal_selesai_order, status_order, pembayaran_order, status_pembayaran_order;
 	int total;
-	public String getId() {
-		return id;
+	public String getId_order() {
+		return id_order;
 	}
-	public void setId(String id) {
-		this.id = id;
+	public void setId_order(String id_order) {
+		this.id_order = id_order;
 	}
-	public String getId_costumer() {
-		return id_costumer;
+	public String getTanggal_datang_order() {
+		return tanggal_datang_order;
 	}
-	public void setId_costumer(String id_costumer) {
-		this.id_costumer = id_costumer;
+	public void setTanggal_datang_order(String tanggal) {
+		this.tanggal_datang_order = tanggal;
 	}
-	public String getId_service() {
-		return id_service;
+	public String getTanggal_selesai_order() {
+		return tanggal_selesai_order;
 	}
-	public void setId_service(String id_service) {
-		this.id_service = id_service;
+	public void setTanggal_selesai_order(String tanggal_selesai) {
+		this.tanggal_selesai_order = tanggal_selesai;
 	}
-	public String getId_user() {
-		return id_user;
+	public String getStatus_order() {
+		return status_order;
 	}
-	public void setId_user(String id_user) {
-		this.id_user = id_user;
+	public void setStatus_order(String status) {
+		this.status_order = status;
 	}
-	public String getTanggal() {
-		return tanggal;
+	public String getPembayaran_order() {
+		return pembayaran_order;
 	}
-	public void setTanggal(String tanggal) {
-		this.tanggal = tanggal;
+	public void setPembayaran_order(String pembayaran) {
+		this.pembayaran_order = pembayaran;
 	}
-	public String getTanggal_selesai() {
-		return tanggal_selesai;
+	public String getStatus_pembayaran_order() {
+		return status_pembayaran_order;
 	}
-	public void setTanggal_selesai(String tanggal_selesai) {
-		this.tanggal_selesai = tanggal_selesai;
-	}
-	public String getStatus() {
-		return status;
-	}
-	public void setStatus(String status) {
-		this.status = status;
-	}
-	public String getStatus_pembayaran() {
-		return status_pembayaran;
-	}
-	public void setStatus_pembayaran(String status_pembayaran) {
-		this.status_pembayaran = status_pembayaran;
+	public void setStatus_pembayaran_order(String status_pembayaran) {
+		this.status_pembayaran_order = status_pembayaran;
 	}
 	public int getTotal() {
 		return total;
@@ -58,6 +46,8 @@ public class Order {
 	public void setTotal(int total) {
 		this.total = total;
 	}
+	
+	
 	
 	
 
