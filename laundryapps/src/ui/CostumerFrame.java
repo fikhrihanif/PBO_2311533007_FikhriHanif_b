@@ -9,6 +9,7 @@ import javax.swing.border.EmptyBorder;
 import DAO.CostumerRepo;
 import DAO.UserRepo;
 import model.Costumer;
+import model.CostumerBuilder;
 import model.User;
 import table.TableCostumer;
 import table.TableUser;
@@ -112,11 +113,16 @@ public class CostumerFrame extends JFrame {
 		btnSave.setBounds(89, 193, 85, 40);
 		btnSave.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Costumer costumer = new Costumer();
+				Costumer cs = new CostumerBuilder()
+						.setNama(txtNama.getText())
+						.setAlamat(txtAlamat.getText())
+						.setNohp(txtNohp.getText())
+						.build();
+				/*Costumer costumer = new Costumer();
 				costumer.setNama_costumer(txtNama.getText());
 				costumer.setAlamat_costumer(txtAlamat.getText());
-				costumer.setNohp_costumer(txtNohp.getText());
-				cst.save(costumer);
+				costumer.setNohp_costumer(txtNohp.getText());*/
+				cst.save(cs);
 				reset();
 				loadTable();
 			}
@@ -129,12 +135,20 @@ public class CostumerFrame extends JFrame {
 		btnUpdate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(id != null) {
-					Costumer costumer = new Costumer();
+					
+					Costumer cs = new CostumerBuilder()
+							.setNama(txtNama.getText())
+							.setAlamat(txtAlamat.getText())
+							.setNohp(txtNohp.getText())
+							.setId(id)
+							.build();
+					
+					/*Costumer costumer = new Costumer();
 					costumer.setNama_costumer(txtNama.getText());
 					costumer.setAlamat_costumer(txtAlamat.getText());
 					costumer.setNohp_costumer(txtNohp.getText());
-					costumer.setId_costumer(id);
-					cst.update(costumer);
+					costumer.setId_costumer(id);*/
+					cst.update(cs);
 					reset();
 					loadTable();
 				}

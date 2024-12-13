@@ -12,14 +12,15 @@ import java.util.logging.Logger;
 
 import confg.Database;
 import model.Costumer;
+import model.CostumerBuilder;
 
 
 public class CostumerRepo implements CostumerDAO{
 	private Connection connection;
-	final String insert = "INSERT INTO costumer (nama_costumer, alamat_costumer, nohp_costumer) VALUES (?,?,?);";
+	final String insert = "INSERT INTO costumer (nama, alamat, nohp) VALUES (?,?,?);";
 	final String select = "SELECT * FROM costumer;" ;
-	final String delete = "DELETE FROM costumer WHERE id_service = ?;";
-	final String update = "UPDATE costumer SET nama_costumer=?, alamat_costumer=?, nohp_costumer=? WHERE id_service=?;";
+	final String delete = "DELETE FROM costumer WHERE id = ?;";
+	final String update = "UPDATE costumer SET nama=?, alamat=?, nohp=? WHERE id=?;";
 	
 	public CostumerRepo() {
 		connection = Database.koneksi();
@@ -58,12 +59,19 @@ public class CostumerRepo implements CostumerDAO{
 			Statement st = connection.createStatement();
 			ResultSet rs = st.executeQuery(select);
 			while(rs.next()) {
-				Costumer costumer = new Costumer();
-				costumer.setId_costumer(rs.getString("id_service"));
+				Costumer cs = new CostumerBuilder()
+						.setId(rs.getString("id"))
+						.setNama(rs.getString("nama"))
+						.setAlamat(rs.getString("alamat"))
+						.setNohp(rs.getString("nohp"))
+						.build();
+				
+				/*Costumer costumer = new Costumer();
+				costumer.setId_costumer(rs.getString("id"));
 				costumer.setNama_costumer(rs.getString("nama_costumer"));
 				costumer.setAlamat_costumer(rs.getString("alamat_costumer"));
-				costumer.setNohp_costumer(rs.getString("nohp_costumer"));
-				ls.add(costumer);
+				costumer.setNohp_costumer(rs.getString("nohp_costumer"));*/
+				ls.add(cs);
 			}
 		}catch(SQLException e) {
 			Logger.getLogger(CostumerDAO.class.getName()).log(Level.SEVERE, null, e);
