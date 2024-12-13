@@ -1,71 +1,54 @@
 package model;
 
 public class OrderDetail {
-	
-	String IdDetail,tanggal,tanggalP,jumlahKg,Total,Status,Pembayaran,StatusPembayaran;
+	String id, order_id, service_id, harga, jumlah, total;
 
-	public String getIdDetail() {
-		return IdDetail;
+	public String getId() {
+		return id;
 	}
 
-	public String getStatus() {
-		return Status;
+	public void setId(String id) {
+		this.id = id;
 	}
 
-	public void setStatus(String status) {
-		Status = status;
+	public String getOrder_id() {
+		return order_id;
 	}
 
-	public String getPembayaran() {
-		return Pembayaran;
+	public void setOrder_id(String order_id) {
+		this.order_id = order_id;
 	}
 
-	public void setPembayaran(String pembayaran) {
-		Pembayaran = pembayaran;
+	public String getService_id() {
+		return service_id;
 	}
 
-	public String getStatusPembayaran() {
-		return StatusPembayaran;
+	public void setService_id(String service_id) {
+		this.service_id = service_id;
 	}
 
-	public void setStatusPembayaran(String statusPembayaran) {
-		StatusPembayaran = statusPembayaran;
+	public String getHarga() {
+		return harga;
 	}
 
-	public void setIdDetail(String idDetail) {
-		IdDetail = idDetail;
+	public void setHarga(String harga) {
+		this.harga = harga;
 	}
 
-	public String getTanggal() {
-		return tanggal;
+	public String getJumlah() {
+		return jumlah;
 	}
 
-	public void setTanggal(String idOrder) {
-		tanggal = idOrder;
-	}
-
-	public String getTanggalP() {
-		return tanggalP;
-	}
-
-	public void setTanggalP(String idLayanan) {
-		tanggalP = idLayanan;
-	}
-
-	public String getJumlahKg() {
-		return jumlahKg;
-	}
-
-	public void setJumlahKg(String jumlah) {
-		jumlahKg = jumlah;
+	public void setJumlah(String jumlah) {
+		this.jumlah = jumlah;
 	}
 
 	public String getTotal() {
-		return Total;
+		return total;
 	}
 
 	public void setTotal(String total) {
-		Total = total;
+		this.total = total;
 	}
 
 }

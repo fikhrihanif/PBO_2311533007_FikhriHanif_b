@@ -1,31 +1,31 @@
 package model;
 
 public class Service {
-	String id_service, jenis_service, status_service;
-	int harga_service;
-	public String getId_service() {
-		return id_service;
+	String id, jenis, status;
+	int harga;
+	public String getId() {
+		return id;
 	}
-	public void setId_service(String id) {
-		this.id_service = id;
+	public void setId(String id) {
+		this.id = id;
 	}
-	public String getJenis_service() {
-		return jenis_service;
+	public String getJenis() {
+		return jenis;
 	}
-	public void setJenis_service(String jenis) {
-		this.jenis_service = jenis;
+	public void setJenis(String jenis) {
+		this.jenis = jenis;
 	}
-	public String getStatus_service() {
-		return status_service;
+	public String getStatus() {
+		return status;
 	}
-	public void setStatus_service(String status) {
-		this.status_service = status;
+	public void setStatus(String status) {
+		this.status = status;
 	}
-	public int getHarga_service() {
-		return harga_service;
+	public int getHarga() {
+		return harga;
 	}
-	public void setHarga_service(int harga) {
-		this.harga_service = harga;
+	public void setHarga(int harga) {
+		this.harga = harga;
 	}
 
 	

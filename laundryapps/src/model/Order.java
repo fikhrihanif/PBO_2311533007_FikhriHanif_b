@@ -1,54 +1,69 @@
 package model;
 
 public class Order {
-	
-	String id_order, tanggal_datang_order, tanggal_selesai_order, status_order, pembayaran_order, status_pembayaran_order;
-	int total;
-	public String getId_order() {
-		return id_order;
+	String id, id_pelanggan, tanggal, tanggal_pengambilan, status, pembayaran, status_pembayaran, total;
+
+	public String getId() {
+		return id;
 	}
-	public void setId_order(String id_order) {
-		this.id_order = id_order;
+
+	public void setId(String id) {
+		this.id = id;
 	}
-	public String getTanggal_datang_order() {
-		return tanggal_datang_order;
+
+	public String getId_pelanggan() {
+		return id_pelanggan;
 	}
-	public void setTanggal_datang_order(String tanggal) {
-		this.tanggal_datang_order = tanggal;
+
+	public void setId_pelanggan(String id_pelanggan) {
+		this.id_pelanggan = id_pelanggan;
 	}
-	public String getTanggal_selesai_order() {
-		return tanggal_selesai_order;
+
+	public String getTanggal() {
+		return tanggal;
 	}
-	public void setTanggal_selesai_order(String tanggal_selesai) {
-		this.tanggal_selesai_order = tanggal_selesai;
+
+	public void setTanggal(String tanggal) {
+		this.tanggal = tanggal;
 	}
-	public String getStatus_order() {
-		return status_order;
+
+	public String getTanggal_pengambilan() {
+		return tanggal_pengambilan;
 	}
-	public void setStatus_order(String status) {
-		this.status_order = status;
+
+	public void setTanggal_pengambilan(String tanggal_pengambilan) {
+		this.tanggal_pengambilan = tanggal_pengambilan;
 	}
-	public String getPembayaran_order() {
-		return pembayaran_order;
+
+	public String getStatus() {
+		return status;
 	}
-	public void setPembayaran_order(String pembayaran) {
-		this.pembayaran_order = pembayaran;
+
+	public void setStatus(String status) {
+		this.status = status;
 	}
-	public String getStatus_pembayaran_order() {
-		return status_pembayaran_order;
+
+	public String getPembayaran() {
+		return pembayaran;
 	}
-	public void setStatus_pembayaran_order(String status_pembayaran) {
-		this.status_pembayaran_order = status_pembayaran;
+
+	public void setPembayaran(String pembayaran) {
+		this.pembayaran = pembayaran;
 	}
-	public int getTotal() {
+
+	public String getStatus_pembayaran() {
+		return status_pembayaran;
+	}
+
+	public void setStatus_pembayaran(String status_pembayaran) {
+		this.status_pembayaran = status_pembayaran;
+	}
+
+	public String getTotal() {
 		return total;
 	}
-	public void setTotal(int total) {
+
+	public void setTotal(String total) {
 		this.total = total;
 	}
-	
-	
-	
-	
-
 }
